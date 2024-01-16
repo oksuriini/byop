@@ -1,27 +1,36 @@
 # BringYourOwnPizza
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+This is Angular program to build your own pizza.
 
-## Development server
+Pizza can be built by choosing:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- One Base
+- One Sauce
+- Max three ingredients
 
-## Code scaffolding
+After this you can print out your pizza in final screen.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The idea is to have picture for each option, and when user prints the pizza,
+the pictures will be layered on top of each other to look like a pizza with toppings on it.
 
-## Build
+Implimented:
+[] You can choose one of the four bases
+[] You can choose one of the four sauces
+[] You can choose three ingredients
+[] You can print out your pizza
+[] Implement pizza print pictures
+[] Finalize pizza printing
+[] Clean up the visuals
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## To run this program:
 
-## Running unit tests
+Git clone the repo:
+`git clone https://github.com/oksuriini/byop.git`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Change directory:
+`cd byop`
 
-## Running end-to-end tests
+Install dependencies:
+`npm install`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Finally run command `npm run dev` to start a dev server, which will be available at `http://localhost:4200`
