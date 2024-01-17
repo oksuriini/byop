@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './final.component.html',
   styleUrl: './final.component.css',
 })
-export class FinalComponent {
-  @Input()
+export class FinalComponent implements OnInit {
   wrapperForm!: FormGroup;
+  disableButton!: boolean;
+  constructor(private parentForm: FormGroupDirective) {}
+
+  ngOnInit(): void {
+    this.wrapperForm = this.parentForm.control;
+  }
 }

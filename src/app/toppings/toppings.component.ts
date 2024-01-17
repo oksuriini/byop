@@ -20,6 +20,10 @@ export class ToppingsComponent implements OnInit {
   choiceList: ToppingChoice[] = [
     { name: 'Sausage', value: 'sausage' },
     { name: 'Lettuce', value: 'lettuce' },
+    { name: 'Chicken', value: 'chicken' },
+    { name: 'Tomato', value: 'tomato' },
+    { name: 'Strawberry', value: 'strawberry' },
+    { name: 'Pesto', value: 'pesto' },
   ];
   constructor(private rootFormGroup: FormGroupDirective) {}
   disableButton: boolean = true;
@@ -51,7 +55,7 @@ export class ToppingsComponent implements OnInit {
   }
 
   allowContinue() {
-    if (this.wrapperForm.controls['toppings'].value != '') {
+    if (this.wrapperForm.controls['toppings'].value.length <= 3) {
       this.disableButton = false;
     } else {
       this.disableButton = true;
