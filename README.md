@@ -17,11 +17,11 @@ Implimented:
 [x] You can choose one of the four bases
 [x] You can choose one of the four sauces
 [x] You can choose three ingredients
-[] You can print out your pizza
-[] Implement pizza print pictures
-[] Finalize pizza printing
-[] Refactor to more maintainable state
-[] Clean up the visuals
+[] You can print out your pizza (this and below is more or less same)
+[] Implement pizza print pictures (look at comment above)
+[] Finalize pizza printing (eg. make it fit and work properly)
+[] Refactor to more maintainable state (make adding ingredients, pictures etc easier)
+[] Clean up the visuals (Improve visuals and add some proper css)
 
 ## To run this program:
 
