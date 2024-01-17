@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormGroup,
   FormGroupDirective,
@@ -20,6 +20,7 @@ export class SauceComponent {
 
   ngOnInit(): void {
     this.wrapperForm = this.rootFormGroup.control;
+    this.allowContinue();
   }
 
   allowContinue() {

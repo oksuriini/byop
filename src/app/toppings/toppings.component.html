@@ -1,3 +1,23 @@
-<p>toppings works!</p>
+<form [formGroup]="wrapperForm" (change)="allowContinue()">
+  @for (choice of choiceList; track choice) {
+    <label
+      ><input
+        type="checkbox"
+        [value]="choice.value"
+        (change)="checkChange($event)"
+      />{{ choice.name }}</label
+    >
+  } @empty {
+    <div>Sorry, there are no toppings today</div>
+  }
+</form>
+
 <button type="" routerLink="/sauce"><p>Go Back</p></button>
-<button type="" routerLink="/final"><p>Go to next</p></button>
+<button
+  type=""
+  routerLink="/final"
+  [disabled]="disableButton"
+  (change)="allowContinue()"
+>
+  <p>Go to next</p>
+</button>

@@ -22,9 +22,7 @@ export class WrapperComponent implements OnInit {
     this.wrapperForm = this.formBuilder.group({
       base: new FormControl(''),
       sauce: new FormControl(''),
-      toppings: new FormControl('Topping'),
+      toppings: new FormControl([]),
     });
-
-    console.log(this.wrapperForm.controls['base']);
   }
 }

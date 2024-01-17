@@ -20,7 +20,9 @@ export class BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.wrapperForm = this.rootFormGroup.control;
+    this.allowContinue();
   }
+
   allowContinue() {
     if (this.wrapperForm.controls['base'].value != '') {
       this.disableButton = false;
