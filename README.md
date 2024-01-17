@@ -20,6 +20,7 @@ Implimented:
 [] You can print out your pizza
 [] Implement pizza print pictures
 [] Finalize pizza printing
+[] Refactor to more maintainable state
 [] Clean up the visuals
 
 ## To run this program:
