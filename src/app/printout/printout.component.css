@@ -1,0 +1,23 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+.base {
+  grid-column: 1;
+  grid-row: 1;
+  border: 1px red solid;
+}
+
+.sauce {
+  grid-column: 1;
+  grid-row: 1;
+  border: 1px green solid;
+}
+
+.topping {
+  visibility: hidden;
+  grid-column: 1;
+  grid-row: 1;
+  border: 1px purple solid;
+}

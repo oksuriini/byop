@@ -4,6 +4,7 @@ import { BaseComponent } from './base/base.component';
 import { SauceComponent } from './sauce/sauce.component';
 import { ToppingsComponent } from './toppings/toppings.component';
 import { FinalComponent } from './final/final.component';
+import { PrintoutComponent } from './printout/printout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'sauce', component: SauceComponent },
   { path: 'toppings', component: ToppingsComponent },
   { path: 'final', component: FinalComponent },
+  { path: 'printout', component: PrintoutComponent },
 ];
