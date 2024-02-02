@@ -33,6 +33,7 @@ export class PrintoutComponent implements OnInit {
 
     this.baseSrc = getBasePicture(this.base, this.imgRootPath);
     this.sauceSrc = getSaucePicture(this.sauce, this.imgRootPath);
+    this.toppingsSrc = getToppingPictures(this.toppings, this.imgRootPath);
   }
 }
 
@@ -62,4 +63,12 @@ function getSaucePicture(sauce: string, imgRootPath: string): string {
   } else {
     return 'imageNotFound';
   }
+}
+
+function getToppingPictures(toppings: string[], imgRootPath: string): string[] {
+  let toppingPics: string[] = [];
+  toppings.forEach((topping) => {
+    toppingPics.push(imgRootPath + topping);
+  });
+  return toppingPics;
 }

@@ -1,23 +1,12 @@
 <div>
   <form [formGroup]="wrapperForm"></form>
-  <p>
-    You wanted a pizza that is {{ this.base }}, with {{ this.sauce }} and as
-    toppings...
-
-    @for (topping of this.toppings; track topping) {
-      {{ topping }}
-    } @empty {
-      <p>Huh... nothing?</p>
-    }
-  </p>
+  <p>Here is your pizza, have a nice day!</p>
 
   <div class="box">
     <img class="base" [src]="baseSrc" alt="Pizza base 1" />
     <img class="sauce" [src]="sauceSrc" alt="Pizza base 1" />
-    <img
-      class="topping"
-      src="../../assets/Pizza/Bases/pizza_base1ready.png"
-      alt="Pizza base 1"
-    />
+    @for (topping of this.toppingsSrc; track topping) {
+      <img class="topping" src="{{ topping }}" alt="Pizza base 1" />
+    } @empty {}
   </div>
 </div>
