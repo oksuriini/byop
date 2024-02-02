@@ -17,9 +17,9 @@ Implimented:
 [x] You can choose one of the four bases
 [x] You can choose one of the four sauces
 [x] You can choose three ingredients
-[] You can print out your pizza (this and below is more or less same)
-[] Implement pizza print pictures (look at comment above)
-[] Finalize pizza printing (eg. make it fit and work properly)
+[x] You can print out your pizza
+[x] Implement pizza print pictures
+[x] Finalize pizza printing
 [] Refactor to more maintainable state (make adding ingredients, pictures etc easier)
 [] Clean up the visuals (Improve visuals and add some proper css)
 
@@ -34,4 +34,7 @@ Change directory:
 Install dependencies:
 `npm install`
 
-Finally run command `npm run dev` to start a dev server, which will be available at `http://localhost:4200`
+Run program with:
+```ng serve```
+
+Program is available from browser at "localhost:4200"
