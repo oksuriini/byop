@@ -1,35 +1,36 @@
 <div>
-  <fieldset>
+  <fieldset class="fieldset">
     <form [formGroup]="wrapperForm" (change)="allowContinue()">
-      <input
-        type="radio"
-        formControlName="base"
-        value="Pan Pizza"
-        id="pan"
-      /><label for="Pan Pizza">Pan Pizza</label>
-      <input
-        type="radio"
-        formControlName="base"
-        value="Thincrust Pizza"
-        id="thin"
-      /><label for="Thincrust Pizza">Thincrust Pizza</label>
-      <input
-        type="radio"
-        formControlName="base"
-        value="Neapolitan Pizza"
-        id="neapolitan"
-      />
-      <label for="Neapolitan Pizza">Neapolitan Pizza</label>
-      <input
-        type="radio"
-        formControlName="base"
-        value="Sheetpan Pizza"
-        id="square"
-      /><label for="Sheetpan Pizza">Sheetpan Pizza</label>
-      <button type="" routerLink="/"><p>Go Back</p></button>
-      <button type="" [disabled]="this.disableButton" routerLink="/sauce">
-        <p>Go to next</p>
-      </button>
+      <ul id="bases">
+        @for (pizzabase of baseList; track pizzabase.id) {
+          <li class="base-li">
+            <label for="pizzabase.name">
+              <img
+                class="pizzaimage"
+                [src]="this.baseSrc + pizzabase.image"
+                alt="Pizza base"
+              />
+              <input
+                type="radio"
+                [value]="pizzabase.value"
+                [name]="pizzabase.formControlName"
+              />
+              {{ pizzabase.name }}</label
+            >
+          </li>
+        }
+      </ul>
+      <div class="buttons">
+        <button type="" routerLink="/" class="button-back">🍕</button>
+        <button
+          type=""
+          [disabled]="this.disableButton"
+          routerLink="/sauce"
+          class="button-next"
+        >
+          🍕
+        </button>
+      </div>
     </form>
   </fieldset>
 </div>

@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { ToppingChoice } from './ToppingChoice';
+import { ToppingChoice, getToppings } from './ToppingChoice';
 
 @Component({
   selector: 'app-toppings',
@@ -17,13 +17,9 @@ import { ToppingChoice } from './ToppingChoice';
 export class ToppingsComponent implements OnInit {
   wrapperForm!: FormGroup;
   arraySelections: string[] = [];
-  choiceList: ToppingChoice[] = [
-    { name: 'Pepperoni', value: 'Topping/pepperoniready.png' },
-    { name: 'Lettuce', value: 'Topping/lettuceready.png' },
-    { name: 'Chicken', value: 'Topping/chickenready.png' },
-    { name: 'Pineapple', value: 'Topping/pineappleready.png' },
-    { name: 'Strawberry', value: 'Topping/strawberryready.png' },
-  ];
+
+  choiceList: ToppingChoice[] = getToppings();
+
   constructor(private rootFormGroup: FormGroupDirective) {}
   disableButton: boolean = true;
 
