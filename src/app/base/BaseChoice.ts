@@ -20,6 +20,7 @@ export class BaseChoice {
   }
 }
 
+// Add new pizza bases under "baseChoice"
 export function getBases(): BaseChoice[] {
   const baseChoice: BaseChoice[] = [
     {

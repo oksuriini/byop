@@ -5,18 +5,21 @@
         @for (pizzabase of baseList; track pizzabase.id) {
           <li class="base-li">
             <label for="pizzabase.name">
-              <img
-                class="pizzaimage"
-                [src]="this.baseSrc + pizzabase.image"
-                alt="Pizza base"
-              />
-              <input
-                type="radio"
-                [value]="pizzabase.value"
-                [name]="pizzabase.formControlName"
-              />
-              {{ pizzabase.name }}</label
-            >
+              <div>
+                <input
+                  type="radio"
+                  [value]="pizzabase.value"
+                  [name]="pizzabase.formControlName"
+                  formControlName="base"
+                />
+                <img
+                  class="pizzaimage"
+                  [src]="this.baseSrc + pizzabase.image"
+                  alt="Pizza base"
+                />
+              </div>
+              <label>{{ pizzabase.name }}</label>
+            </label>
           </li>
         }
       </ul>

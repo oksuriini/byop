@@ -33,4 +33,6 @@
   border: 2px black solid;
   padding: 0px 20px 10px 20px;
   border-radius: 8px;
+  height: auto;
+  width: auto;
 }
