@@ -1,31 +1,38 @@
-<form [formGroup]="wrapperForm" (change)="allowContinue()">
-  <input
-    type="radio"
-    formControlName="sauce"
-    value="BBQ Sauce"
-    id="pan"
-  /><label for="BBQ Sauce">BBQ Sauce</label>
-  <input
-    type="radio"
-    formControlName="sauce"
-    value="Marinara Sauce"
-    id="thin"
-  /><label for="Marinara Sauce">Marinara Sauce</label>
-  <input
-    type="radio"
-    formControlName="sauce"
-    value="Alfredo Sauce"
-    id="neapolitan"
-  />
-  <label for="Alfredo Sauce">Alfredo Sauce</label>
-  <input
-    type="radio"
-    formControlName="sauce"
-    value="Buffalo Sauce"
-    id="square"
-  /><label for="Buffalo Sauce">Buffalo Sauce</label>
-</form>
-<button type="" routerLink="/base"><p>Go Back</p></button>
-<button type="" [disabled]="this.disableButton" routerLink="/toppings">
-  <p>Go to next</p>
-</button>
+<div>
+  <form [formGroup]="wrapperForm" (change)="allowContinue()">
+    <ul id="sauces">
+      @for (pizzasauce of sauceList; track pizzasauce) {
+        <li class="base-li">
+          <label for="pizzasauce.name">
+            <div class="center">
+              <input
+                type="radio"
+                [value]="pizzasauce.value"
+                [name]="pizzasauce.formControlName"
+                formControlName="sauce"
+              />
+              <img
+                class="pizzaimage"
+                [src]="this.baseSrc + pizzasauce.image"
+                alt="Pizza sauce"
+              />
+            </div>
+            <label class="center">{{ pizzasauce.name }}</label>
+          </label>
+        </li>
+      }
+    </ul>
+
+    <div class="buttons">
+      <button type="" routerLink="/base" class="button-back"><p>🍕</p></button>
+      <button
+        type=""
+        [disabled]="this.disableButton"
+        routerLink="/toppings"
+        class="button-next"
+      >
+        <p>🍕</p>
+      </button>
+    </div>
+  </form>
+</div>

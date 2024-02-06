@@ -1,7 +1,7 @@
 #bases {
   list-style: none;
   display: grid;
-  grid-template-columns: 400px 200px;
+  grid-template-columns: 200px 200px;
   grid-row: auto auto;
   grid-gap: 10px;
 }
@@ -11,6 +11,14 @@
   width: 200px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.center {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
 }
 
 [type="radio"] {
@@ -21,17 +29,10 @@
   cursor: pointer;
 }
 
-[type="radio"] + img {
-}
-
 [type="radio"]:checked + img {
   outline: 2px solid red;
 }
 .pizzaimage {
   width: 100px;
   height: 100px;
-}
-
-.fieldset {
-  border: none;
 }

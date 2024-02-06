@@ -1,39 +1,37 @@
 <div>
-  <fieldset class="fieldset">
-    <form [formGroup]="wrapperForm" (change)="allowContinue()">
-      <ul id="bases">
-        @for (pizzabase of baseList; track pizzabase.id) {
-          <li class="base-li">
-            <label for="pizzabase.name">
-              <div>
-                <input
-                  type="radio"
-                  [value]="pizzabase.value"
-                  [name]="pizzabase.formControlName"
-                  formControlName="base"
-                />
-                <img
-                  class="pizzaimage"
-                  [src]="this.baseSrc + pizzabase.image"
-                  alt="Pizza base"
-                />
-              </div>
-              <label>{{ pizzabase.name }}</label>
-            </label>
-          </li>
-        }
-      </ul>
-      <div class="buttons">
-        <button type="" routerLink="/" class="button-back">🍕</button>
-        <button
-          type=""
-          [disabled]="this.disableButton"
-          routerLink="/sauce"
-          class="button-next"
-        >
-          🍕
-        </button>
-      </div>
-    </form>
-  </fieldset>
+  <form [formGroup]="wrapperForm" (change)="allowContinue()">
+    <ul id="bases">
+      @for (pizzabase of baseList; track pizzabase.id) {
+        <li class="base-li">
+          <label for="pizzabase.name">
+            <div class="center">
+              <input
+                type="radio"
+                [value]="pizzabase.value"
+                [name]="pizzabase.formControlName"
+                formControlName="base"
+              />
+              <img
+                class="pizzaimage"
+                [src]="this.baseSrc + pizzabase.image"
+                alt="Pizza base"
+              />
+            </div>
+            <label class="center">{{ pizzabase.name }}</label>
+          </label>
+        </li>
+      }
+    </ul>
+    <div class="buttons">
+      <button type="" routerLink="/" class="button-back">🍕</button>
+      <button
+        type=""
+        [disabled]="this.disableButton"
+        routerLink="/sauce"
+        class="button-next"
+      >
+        🍕
+      </button>
+    </div>
+  </form>
 </div>
