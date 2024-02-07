@@ -30,9 +30,14 @@
 }
 
 [type="checkbox"]:checked + img {
-  outline: 2px solid red;
+  border: 2px solid red;
+  border-radius: 10px;
 }
 
+[type="checkbox"]:hover + img {
+  background-color: #b1eeac;
+  border-radius: 10px;
+}
 .topping-img {
   width: 100px;
   height: 100px;

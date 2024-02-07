@@ -25,13 +25,15 @@
   </ul>
 </form>
 
-<button type="" routerLink="/sauce" class="button-back">🍕</button>
-<button
-  type=""
-  routerLink="/final"
-  [disabled]="disableButton"
-  (change)="allowContinue()"
-  class="button-next"
->
-  🍕
-</button>
+<div class="buttons">
+  <button type="" routerLink="/sauce" class="button-back">🍕</button>
+  <button
+    type=""
+    routerLink="/final"
+    [disabled]="disableButton"
+    (change)="allowContinue()"
+    class="button-next"
+  >
+    🍕
+  </button>
+</div>

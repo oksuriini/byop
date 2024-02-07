@@ -21,10 +21,10 @@
   flex-direction: row;
   justify-items: center;
   justify-content: space-between;
+  padding-bottom: 40px;
 }
 .button-next {
   border: 0;
-  background-color: powderblue;
   line-height: 0;
   padding: 0;
   margin: 0;
