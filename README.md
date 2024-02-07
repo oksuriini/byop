@@ -28,6 +28,7 @@ Implimented: (All implemented)
 [x] Refactor to more maintainable state (make adding ingredients, pictures etc easier)
 [x] Clean up the visuals (Improve visuals and add some proper css)
 
+
 ## To run this program:
 
 Git clone the repo:
@@ -39,4 +40,7 @@ Change directory:
 Install dependencies:
 `npm install`
 
-Finally run command `npm run dev` to start a dev server, which will be available at `http://localhost:4200`
+Run program with:
+```ng serve```
+
+Program is available from browser at "localhost:4200"
