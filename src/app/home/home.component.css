@@ -1,0 +1,15 @@
+#instruction-title {
+  font-family: "Segoe UI", sans-serif;
+}
+#instructions {
+  list-style: none;
+  font-family: "Roboto", "Verdana", sans-serif;
+  padding-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-between;
+}

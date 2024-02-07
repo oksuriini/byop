@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { ToppingChoice } from './ToppingChoice';
+import { ToppingChoice, getToppings } from './ToppingChoice';
 
 @Component({
   selector: 'app-toppings',
@@ -16,14 +16,10 @@ import { ToppingChoice } from './ToppingChoice';
 })
 export class ToppingsComponent implements OnInit {
   wrapperForm!: FormGroup;
-  arraySelections: string[] = [];
-  choiceList: ToppingChoice[] = [
-    { name: 'Pepperoni', value: 'Topping/pepperoniready.png' },
-    { name: 'Lettuce', value: 'Topping/lettuceready.png' },
-    { name: 'Chicken', value: 'Topping/chickenready.png' },
-    { name: 'Pineapple', value: 'Topping/pineappleready.png' },
-    { name: 'Strawberry', value: 'Topping/strawberryready.png' },
-  ];
+  arraySelections: number[] = [];
+  baseSrc: string = '../../assets/Pizza/Topping/';
+  choiceList: ToppingChoice[] = getToppings();
+
   constructor(private rootFormGroup: FormGroupDirective) {}
   disableButton: boolean = true;
 
@@ -45,9 +41,9 @@ export class ToppingsComponent implements OnInit {
     }
   }
 
-  removeUnchecked(arrayToRemoveFrom: string[], unchecked: string): string[] {
-    let newArray: string[] = [];
-    arrayToRemoveFrom.forEach((element) => {
+  removeUnchecked(arrayToRemoveFrom: number[], unchecked: number): number[] {
+    let newArray: number[] = [];
+    arrayToRemoveFrom.forEach((element: any) => {
       if (element != unchecked) newArray.push(element);
     });
     return newArray;

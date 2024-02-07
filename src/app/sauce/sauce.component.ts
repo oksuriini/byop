@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { SauceChoice, getSauces } from './SauceChoice';
 
 @Component({
   selector: 'app-sauce',
@@ -14,13 +15,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sauce.component.css',
 })
 export class SauceComponent {
+  baseSrc: string = '../../assets/Pizza/Sauces/';
   wrapperForm!: FormGroup;
+  sauceList!: SauceChoice[];
   constructor(private rootFormGroup: FormGroupDirective) {}
   disableButton: boolean = true;
 
   ngOnInit(): void {
     this.wrapperForm = this.rootFormGroup.control;
     this.allowContinue();
+    this.sauceList = getSauces();
   }
 
   allowContinue() {

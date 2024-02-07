@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { BaseChoice, getBases } from './BaseChoice';
 
 @Component({
   selector: 'app-base',
@@ -14,6 +15,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './base.component.css',
 })
 export class BaseComponent implements OnInit {
+  baseSrc = '../../assets/Pizza/Bases/';
+  baseList!: BaseChoice[];
   wrapperForm!: FormGroup;
   disableButton: boolean = true;
   constructor(private rootFormGroup: FormGroupDirective) {}
@@ -21,6 +24,7 @@ export class BaseComponent implements OnInit {
   ngOnInit(): void {
     this.wrapperForm = this.rootFormGroup.control;
     this.allowContinue();
+    this.baseList = getBases();
   }
 
   allowContinue() {

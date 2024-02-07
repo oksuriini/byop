@@ -1,0 +1,44 @@
+#bases {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-gap: 10px;
+}
+
+.base-li {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.center {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+[type="radio"]:checked + img {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+[type="radio"]:hover + img {
+  background-color: #b1eeac;
+  border-radius: 10px;
+}
+.pizzaimage {
+  width: 100px;
+  height: 100px;
+}
