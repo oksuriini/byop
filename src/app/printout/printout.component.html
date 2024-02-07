@@ -3,10 +3,10 @@
   <p>Here is your pizza, have a nice day!</p>
 
   <div class="box">
-    <img class="base" [src]="baseSrc" alt="Pizza base 1" />
-    <img class="sauce" [src]="sauceSrc" alt="Pizza base 1" />
-    @for (topping of this.toppingsSrc; track topping) {
-      <img class="topping" src="{{ topping }}" alt="Pizza base 1" />
+    <img class="base" [src]="baseSrc" alt="Pizza Sauce" />
+    <img class="sauce" [src]="sauceSrc" alt="Pizza Sauce" />
+    @for (topping of toppingsSrc; track topping) {
+      <img class="topping" [src]="topping" alt="Pizza Topping" />
     } @empty {}
   </div>
 </div>

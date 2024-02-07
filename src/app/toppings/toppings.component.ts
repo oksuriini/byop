@@ -16,8 +16,8 @@ import { ToppingChoice, getToppings } from './ToppingChoice';
 })
 export class ToppingsComponent implements OnInit {
   wrapperForm!: FormGroup;
-  arraySelections: string[] = [];
-
+  arraySelections: number[] = [];
+  baseSrc: string = '../../assets/Pizza/Topping/';
   choiceList: ToppingChoice[] = getToppings();
 
   constructor(private rootFormGroup: FormGroupDirective) {}
@@ -41,9 +41,9 @@ export class ToppingsComponent implements OnInit {
     }
   }
 
-  removeUnchecked(arrayToRemoveFrom: string[], unchecked: string): string[] {
-    let newArray: string[] = [];
-    arrayToRemoveFrom.forEach((element) => {
+  removeUnchecked(arrayToRemoveFrom: number[], unchecked: number): number[] {
+    let newArray: number[] = [];
+    arrayToRemoveFrom.forEach((element: any) => {
       if (element != unchecked) newArray.push(element);
     });
     return newArray;

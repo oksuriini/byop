@@ -1,7 +1,6 @@
-<!--Debugging section below-------------
-
+<!--
 <h2>Pizza info:</h2>
-<p>Pizza base: {{ this.wrapperForm.controls["base"].value }}</p>
+<p>Pizza base: {{ this.wrapperForm.controls["base"].value.image }}</p>
 <p>Pizza sauce: {{ this.wrapperForm.controls["sauce"].value }}</p>
 <p>
   Pizza toppings:
@@ -9,7 +8,6 @@
     <p>{{ topping }}</p>
   }
 </p>
-
 -->
 <div>
   <form [formGroup]="this.wrapperForm">

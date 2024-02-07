@@ -7,7 +7,7 @@
             <div class="center">
               <input
                 type="radio"
-                [value]="pizzasauce.value"
+                [value]="pizzasauce"
                 [name]="pizzasauce.formControlName"
                 formControlName="sauce"
               />
@@ -22,16 +22,15 @@
         </li>
       }
     </ul>
-
     <div class="buttons">
-      <button type="" routerLink="/base" class="button-back"><p>🍕</p></button>
+      <button type="" routerLink="/base" class="button-back">🍕</button>
       <button
         type=""
         [disabled]="this.disableButton"
         routerLink="/toppings"
         class="button-next"
       >
-        <p>🍕</p>
+        🍕
       </button>
     </div>
   </form>

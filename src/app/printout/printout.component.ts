@@ -4,6 +4,12 @@ import {
   FormGroupDirective,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { BaseChoice } from '../base/BaseChoice';
+import { SauceChoice } from '../sauce/SauceChoice';
+import {
+  ToppingChoice,
+  getToppingPicturesById,
+} from '../toppings/ToppingChoice';
 
 @Component({
   selector: 'app-printout',
@@ -16,9 +22,9 @@ export class PrintoutComponent implements OnInit {
   imgRootPath: string = '../../assets/Pizza/';
 
   wrapperForm!: FormGroup;
-  base!: string;
-  sauce!: string;
-  toppings!: string[];
+  base!: BaseChoice;
+  sauce!: SauceChoice;
+  toppings!: number[];
   sauceSrc!: string;
   baseSrc!: string;
   toppingsSrc!: string[];
@@ -34,41 +40,22 @@ export class PrintoutComponent implements OnInit {
     this.baseSrc = getBasePicture(this.base, this.imgRootPath);
     this.sauceSrc = getSaucePicture(this.sauce, this.imgRootPath);
     this.toppingsSrc = getToppingPictures(this.toppings, this.imgRootPath);
+    console.log(this.toppingsSrc);
   }
 }
 
-function getBasePicture(base: string, imgRootPath: string): string {
-  if (base == 'Pan Pizza') {
-    return imgRootPath + 'Bases/pizza_base1ready.png';
-  } else if (base == 'Thincrust Pizza') {
-    return imgRootPath + 'Bases/pizza_base2ready.png';
-  } else if (base == 'Neapolitan Pizza') {
-    return imgRootPath + 'Bases/pizza_base4ready.png';
-  } else if (base == 'Sheetpan Pizza') {
-    return imgRootPath + 'Bases/pizza_base3ready.png';
-  } else {
-    return 'imageNotFound';
-  }
+function getBasePicture(base: BaseChoice, imgRootPath: string): string {
+  return imgRootPath + 'Bases/' + base.image;
 }
 
-function getSaucePicture(sauce: string, imgRootPath: string): string {
-  if (sauce == 'BBQ Sauce') {
-    return imgRootPath + 'Sauces/sauce1redy.png';
-  } else if (sauce == 'Marinara Sauce') {
-    return imgRootPath + 'Sauces/sauce2redy.png';
-  } else if (sauce == 'Alfredo Sauce') {
-    return imgRootPath + 'Sauces/sauce3redy.png';
-  } else if (sauce == 'Buffalo Sauce') {
-    return imgRootPath + 'Sauces/sauce4redy.png';
-  } else {
-    return 'imageNotFound';
-  }
+function getSaucePicture(sauce: SauceChoice, imgRootPath: string): string {
+  return imgRootPath + 'Sauces/' + sauce.image;
 }
 
-function getToppingPictures(toppings: string[], imgRootPath: string): string[] {
+function getToppingPictures(toppings: number[], imgRootPath: string): string[] {
   let toppingPics: string[] = [];
-  toppings.forEach((topping) => {
-    toppingPics.push(imgRootPath + topping);
+  getToppingPicturesById(toppings).forEach((element) => {
+    toppingPics.push(imgRootPath + 'Topping/' + element);
   });
   return toppingPics;
 }

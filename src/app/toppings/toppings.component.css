@@ -1,0 +1,39 @@
+#toppings {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-gap: 10px;
+}
+
+.base-li {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.center {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + img {
+  outline: 2px solid red;
+}
+
+.topping-img {
+  width: 100px;
+  height: 100px;
+}

@@ -1,23 +1,37 @@
 <form [formGroup]="wrapperForm" (change)="allowContinue()">
-  @for (choice of choiceList; track choice) {
-    <label
-      ><input
-        type="checkbox"
-        [value]="choice.value"
-        (change)="checkChange($event)"
-      />{{ choice.name }}</label
-    >
-  } @empty {
-    <div>Sorry, there are no toppings today</div>
-  }
+  <ul id="toppings">
+    @for (topping of choiceList; track topping) {
+      <li class="base-li">
+        <label for="topping.name">
+          <div class="center">
+            <input
+              type="checkbox"
+              [value]="topping.id"
+              name="toppings"
+              (change)="checkChange($event)"
+            />
+            <img
+              class="topping-img"
+              [src]="this.baseSrc + topping.image"
+              alt="Pizza sauce"
+            />
+          </div>
+          <label class="center">{{ topping.name }}</label>
+        </label>
+      </li>
+    } @empty {
+      <div>Sorry, there are no toppings today</div>
+    }
+  </ul>
 </form>
 
-<button type="" routerLink="/sauce"><p>Go Back</p></button>
+<button type="" routerLink="/sauce" class="button-back">🍕</button>
 <button
   type=""
   routerLink="/final"
   [disabled]="disableButton"
   (change)="allowContinue()"
+  class="button-next"
 >
-  <p>Go to next</p>
+  🍕
 </button>
