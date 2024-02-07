@@ -22,19 +22,19 @@ export function getSauces(): SauceChoice[] {
     {
       name: 'BBQ Sauce',
       value: 'BBQ Sauce',
-      image: 'sauce1redy.png',
+      image: 'sauce3redy.png',
       formControlName: 'sauce',
     },
     {
       name: 'Marinara Sauce',
       value: 'Marinara Sauce',
-      image: 'sauce2redy.png',
+      image: 'sauce1redy.png',
       formControlName: 'sauce',
     },
     {
       name: 'Alfredo Sauce',
       value: 'Alfredo Sauce',
-      image: 'sauce3redy.png',
+      image: 'sauce2redy.png',
       formControlName: 'sauce',
     },
     {
