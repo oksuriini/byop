@@ -12,11 +12,11 @@ After this you can print out your pizza in final screen.
 
 Pizza picture is made out of layers of PNGs that form the pizza.
 
-![Picture of main page]("./promo/Mainpage.png")
+![Picture of main page](promo/Mainpage.png)
 
-![Picture of choosing base]("./promo/Choosebase.png")
+![Picture of choosing base](/promo/Choosebase.png)
 
-![Picture of finished pizza]("./promo/Finishedpizza.png")
+![Picture of finished pizza](/promo/Finishedpizza.png)
 
 Implimented: (All implemented)
 [x] You can choose one of the four bases
